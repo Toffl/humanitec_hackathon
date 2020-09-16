@@ -15,4 +15,3 @@ RUN npm install
 COPY . /app/server/
 
 CMD ["nodemon", "src/server.js"]
-# CMD ["nodemon", "server.js"]
