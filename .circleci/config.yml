@@ -13,6 +13,7 @@ jobs:
         name: build docker image and push to docker hub
         command: |
           cd client
-          docker build -t ht_hackathon/client .
-          # echo "$DOCKER_HUB_PW" | docker login -u $DOCKER_HUB_USER --password-stdin
-          # docker push ht_hackathon/client
+          TAG=0.1.$CIRCLE_BUILD_NUM
+          docker build -t ht_hackathon/client:$TAG .
+          echo "$DOCKER_HUB_PW" | docker login -u $DOCKER_HUB_USER --password-stdin
+          docker push ht_hackathon/client:$TAG
