@@ -8,9 +8,15 @@ jobs:
       - run:
           name: check docker version
           command: docker --version
+          
       - run:
-          name: build docker image and push to docker hub
-          command: |
-            docker build -t ht_hackathon/client .\client\
-            docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PW
-            docker push ht_hackathon/client
+          name: docker login check with creds
+          command: docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PW
+
+          
+      # - run:
+      #     name: build docker image and push to docker hub
+      #     command: |
+      #       docker build -t ht_hackathon/client .\client\
+      #       docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PW
+      #       docker push ht_hackathon/client
