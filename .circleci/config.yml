@@ -5,10 +5,15 @@ jobs:
       - image: 'circleci/node:4.8.2'
     steps:
       - checkout
+
+
+      - setup_remote_docker:
+          docker_layer_caching: true
+
       - run:
           name: check docker version
           command: docker --version
-          
+
       - run:
           name: docker login check with creds
           command: docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PW
