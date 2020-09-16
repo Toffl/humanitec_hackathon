@@ -6,10 +6,18 @@ jobs:
      - checkout
           
      - run:
-        name: __Client__ build docker image and push to docker hub
+        name: Client - build docker image and push to docker hub
         command: |
           cd client
           TAG=0.1.$CIRCLE_BUILD_NUM
           docker build -t cklingspor/ht_hackathon_client:$TAG .
           echo "$DOCKER_HUB_PW" | docker login -u $DOCKER_HUB_USER --password-stdin
           docker push cklingspor/ht_hackathon_client:$TAG
+     - run:
+        name: Server - build docker image and push to docker hub
+        command: |
+          cd server
+          TAG=0.1.$CIRCLE_BUILD_NUM
+          docker build -t cklingspor/ht_hackathon_server:$TAG .
+          echo "$DOCKER_HUB_PW" | docker login -u $DOCKER_HUB_USER --password-stdin
+          docker push cklingspor/ht_hackathon_server:$TAG

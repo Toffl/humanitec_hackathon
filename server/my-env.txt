@@ -1,0 +1,7 @@
+MONGO_URI=mongodb://localhost:27017
+PORT=4000
+JWT_SECRET=secretsecret
+JWT_EXPIRY=30d
+DEBUG=worker:*
+MORGAN=combined
+NODE_ENV=development
