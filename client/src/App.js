@@ -6,15 +6,15 @@ class App extends Component {
     welcome: "..."
   };
 
-  componentDidMount = async () => {
-    try {
-      const res = await axios.get("/welcome");
-      console.log(res.data);
-      this.setState({ welcome: res.data });
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // componentDidMount = async () => {
+  //   try {
+  //     const res = await axios.get("/welcome");
+  //     console.log(res.data);
+  //     this.setState({ welcome: res.data });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
   render() {
     return (
       <div className="App">
