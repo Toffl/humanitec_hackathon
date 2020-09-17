@@ -32,7 +32,7 @@ workflows:
           path: ./server/
       - humanitec/build-push-and-notify-humanitec:
           organization: protos-technologie-gmbh
-          module_name: ht-hackathon.client
+          module_name: ht-hackathon-client
           path: ./client/
 
 
