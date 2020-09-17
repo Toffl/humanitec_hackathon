@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  humanitec: humanitec/humanitec@volatile
 jobs:
   build:
    machine: true
@@ -21,3 +23,8 @@ jobs:
           docker build -t cklingspor/ht_hackathon_server:$TAG .
           echo "$DOCKER_HUB_PW" | docker login -u $DOCKER_HUB_USER --password-stdin
           docker push cklingspor/ht_hackathon_server:$TAG
+workflows:
+  build-push-and-notify-humanitec:
+    jobs:
+      - humanitec/build-push-and-notify-humanitec:
+          organization: protos-technologie-gmbh
