@@ -28,3 +28,4 @@ workflows:
     jobs:
       - humanitec/build-push-and-notify-humanitec:
           organization: protos-technologie-gmbh
+          module_name: ht-hackathon
